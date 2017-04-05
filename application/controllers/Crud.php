@@ -6,13 +6,15 @@ class Crud extends Application {
 
 	public function index()
 	{
-		$userrole = $this->session->userdata('userrole');
-		if ($userrole != 'admin')
-			$message = 'You are not authorized to access this page. Go away';
-		else
-			$message = 'Get ready to fix stuff.';
-		$this->data['content'] = $message;
-		$this->render();
+            $userrole = $this->session->userdata('userrole');
+            if ($userrole != 'admin')
+                    $message = 'You are not authorized to access this page. Go away';
+            else{
+                $message = $this->menu->all();
+                var_dump($message);
+            }
+            $this->data['content'] = $message;
+            $this->render();
 	}
 
 }
