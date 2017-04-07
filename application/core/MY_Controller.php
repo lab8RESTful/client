@@ -25,6 +25,7 @@ class Application extends CI_Controller {
 		$this->data['ci_version'] = (ENVIRONMENT === 'development') ? 'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '';
 		
 		// get the user role
+                //$this->session->set_userdata('uesrrole','admin');
 		$this->data['userrole'] = $this->session->userdata('userrole');
 		if ($this->data['userrole'] == NULL) $this->data['userrole'] = '?';
 	}
