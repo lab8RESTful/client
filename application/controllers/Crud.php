@@ -124,6 +124,7 @@ class Crud extends Application {
 //		print_r($key); echo '<br/>';
 //		die();
 		// validate
+
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules($this->menu->rules());
 		if ($this->form_validation->run() != TRUE) {
